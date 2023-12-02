@@ -34,7 +34,19 @@ public class Trap
             if (trapTargetType == TrapTargetType.Npc)
                 characterMover.Health--;
         }
+
+        if (characterMover.IsUndead)
+        {
+            if (trapTargetType == TrapTargetType.Zombie)
+                characterMover.Health = 0;
+        }
+        else
+        {
+            if (trapTargetType == TrapTargetType.Vampire)
+                characterMover.Health = 0;
+        }
+
     }
 }
 
-public enum TrapTargetType { Player, Npc, Enemy}
+public enum TrapTargetType { Player, Npc, Zombie, Vampire, Alien}

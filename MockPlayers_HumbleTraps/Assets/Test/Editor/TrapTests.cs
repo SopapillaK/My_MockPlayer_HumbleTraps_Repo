@@ -29,4 +29,22 @@ public class TrapTests
         trap.HandleCharacterEntered(characterMover, TrapTargetType.Npc);
         Assert.AreEqual(-1, characterMover.Health);
     }
+
+    [Test]
+    public void ZombieEntering_EnemyTargetedTrap_CheckIfHealthIsZero()
+    {
+        Trap trap = new Trap();
+        ICharacterMover characterMover = Substitute.For<ICharacterMover>();
+        trap.HandleCharacterEntered(characterMover, TrapTargetType.Zombie);
+        Assert.AreEqual(0, characterMover.Health);
+    }
+
+    [Test]
+    public void VampireEntering_EnemyTargetedTrap_CheckIfHealthIsZero()
+    {
+        Trap trap = new Trap();
+        ICharacterMover characterMover = Substitute.For<ICharacterMover>();
+        trap.HandleCharacterEntered(characterMover, TrapTargetType.Vampire);
+        Assert.AreEqual(0, characterMover.Health);
+    }
 }

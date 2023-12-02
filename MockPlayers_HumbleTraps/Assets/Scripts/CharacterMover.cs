@@ -8,7 +8,9 @@ public class CharacterMover : MonoBehaviour, ICharacterMover
 
     [SerializeField]
     private bool isPlayer;
+    private bool isUndead;
     public bool IsPlayer => isPlayer;
+    public bool IsUndead => isUndead;
     public int Health { get; set; }
     private void Awake()
     {
